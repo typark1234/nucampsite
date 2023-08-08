@@ -6,23 +6,6 @@ import { PARTNERS } from '../shared/partners';
 import { Avatar, ListItem } from 'react-native-elements';
 
 
-const screenOptions = {
-    headerTintColor: '#fff',
-    headerStyle: { backgroundColor: '#5637DD' }
-};
-
-export const AboutNavigator = () => {
-    const Stack = createStackNavigator();
-    return (
-        <Stack.Navigator screenOptions={screenOptions}>
-            <Stack.Screen
-                name='About'
-                component={AboutScreen}
-                options={{ title: 'About' }}
-            />
-        </Stack.Navigator>
-    );
-};
 
 const Mission = () =>{
     return (
