@@ -8,12 +8,36 @@ import HomeScreen from './HomeScreen';
 import AboutScreen from './AboutScreen';
 import ContactScreen from './ContactScreen';
 import { Icon } from 'react-native-elements';
+import ConventionScreen from './ConventionScreen';
 
 const Drawer = createDrawerNavigator();
 
 const screenOptions = {
     headerTintColor: '#fff',
     headerStyle: { backgroundColor: '#5637DD' }
+};
+
+const ConventionNavigator = () => {
+    const Stack = createStackNavigator();
+    return (
+        <Stack.Navigator screenOptions={screenOptions}>
+            <Stack.Screen
+                name='UNI Convention 2023'
+                component={ConventionScreen}
+                options={({ navigation }) => ({
+                    
+                    headerLeft: () => (
+                        <Icon
+                            name='arrow-circle-left'
+                            type='font-awesome'
+                            iconStyle={styles.stackIcon}
+                            onPress={() => navigation.toggleDrawer()}
+                        />
+                    )
+                })}
+            />
+        </Stack.Navigator>
+    );
 };
 
 const HomeNavigator = () => {
@@ -47,7 +71,7 @@ const AboutNavigator = () => {
                 name='About'
                 component={AboutScreen}
                 options={({ navigation }) => ({
-                    title: 'Home',
+                    title: 'About', // name과 똑같음
                     headerLeft: () => (
                         <Icon
                             name='arrow-circle-left'
@@ -129,8 +153,24 @@ const Main = () => {
         >
             <Drawer.Navigator
                 initialRouteName='Home'
-                drawerStyle={{ backgroundColor: '#CEC8FF' }}
+                drawerStyle={{ backgroundColor: '#fff' }}
             >
+                <Drawer.Screen
+                    name='Convention'
+                    component={ConventionNavigator}
+                    options={{
+                        title: 'Convention',
+                        drawerIcon: ({ color }) => (
+                            <Icon
+                                name='home'
+                                type='font-awesome'
+                                size={24}
+                                iconStyle={{ width: 24 }}
+                                color={color}
+                            />
+                        )
+                    }}
+                />
                 <Drawer.Screen
                     name='Home'
                     component={HomeNavigator}
