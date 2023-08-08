@@ -1,4 +1,4 @@
-import { ScrollView, Text, View } from 'react-native';
+import { ScrollView, Text } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Card } from 'react-native-elements';
 import { useState } from 'react';
@@ -46,27 +46,6 @@ const AboutScreen = () => {
     return (
         <ScrollView>
           <Mission />
-          <Card>
-            <Card.Title>
-                Community Partners
-            </Card.Title>
-            <Card.Divider/>
-            {partners.map((partner)=>{
-               return (
-                <ListItem key={partner.id}>
-                    <Avatar source={partner.image} rounded />
-                    <ListItem.Content>
-                        <ListItem.Title>{partner.name}</ListItem.Title>
-                        <ListItem.Subtitle>{partner.description}</ListItem.Subtitle>
-                   </ListItem.Content>
-                </ListItem>
-               )})
-            }    
-          </Card>
-          <Card >
-             <Text>Lunch Time</Text>
-             <Text>Menu</Text>
-          </Card>   
           <Card>
             <Card.Title>
                 Community Partners

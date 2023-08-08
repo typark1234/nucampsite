@@ -13,6 +13,7 @@ export const CAMPSITES = [
         name:"AllIANZ ",
         time : "10:10~11:20",
         image: require("../assets/images/Allianz.jpg"),
+        image: require("../assets/images/Columbus.jpg"),
         elevation: 877,
         featured: false,
         description: "Spend a few sunny days and starry nights beneath a canopy of old-growth firs at this enchanting spot by the Chrome River."
